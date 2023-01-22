@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="ChatGPT">
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+
+        <lightning-input type="text" id="searchTerm" placeholder="Please enter search term here..." onkeydown={handleEnterKey}></lightning-input>
+       
+        <template if:true={searchResultChatGPT}>
+            <lightning-formatted-rich-text disable-linkify value={searchResultChatGPT}></lightning-formatted-rich-text>
+        </template>
+
+    </lightning-card>
+</template>
